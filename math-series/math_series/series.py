@@ -38,7 +38,6 @@ def sum_series_recurse(n, calc_values):
     if n < 0:
         return None
     if n in calc_values.keys():
-        print(calc_values)
         return calc_values[n]
 
     new_value = sum_series_recurse(n - 1, calc_values) + sum_series_recurse(n - 2, calc_values)
