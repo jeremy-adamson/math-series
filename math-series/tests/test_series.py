@@ -33,13 +33,13 @@ def test_luc1():
     assert actual == expected
 
 def test_luc2():
-    actual = lucas(11)
+    actual = lucas(11.0)
     expected = 199
     assert actual == expected
 
 def test_luc3():
-    actual = lucas(21)
-    expected = 24476
+    actual = lucas(21.4)
+    expected = None
     assert actual == expected
 
 def test_luc4():
@@ -53,13 +53,13 @@ def test_luc5():
     assert actual == expected
 
 def test_series1():
-    actual = sum_series(3)
-    expected = 2
+    actual = sum_series('a')
+    expected = None
     assert actual == expected
 
 def test_series2():
-    actual = sum_series(3, 2, 4)
-    expected = 10
+    actual = sum_series(-3, 2, 4)
+    expected = None
     assert actual == expected
 
 def test_series3():

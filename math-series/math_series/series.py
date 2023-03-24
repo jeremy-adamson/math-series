@@ -1,3 +1,4 @@
+import math
 
 def fibonacci(n):
     """
@@ -5,8 +6,7 @@ def fibonacci(n):
     :param n: the nth term to be found in a fibonacci sequence
     :return: the nth term of a fibonacci sequence
     """
-    calc_values = {0:0, 1:1}
-    return sum_series_recurse(n, calc_values)
+    return sum_series(n, 0, 1)
 
 def lucas(n):
     """
@@ -14,8 +14,7 @@ def lucas(n):
     :param n: the nth term to be found in a lucas sequence
     :return: the nth term of a lucas sequence
     """
-    calc_values = {0:2, 1:1}
-    return sum_series_recurse(n, calc_values)
+    return sum_series(n, 2, 1)
 
 def sum_series(n, base1 = 0, base2 = 1):
     """
@@ -25,6 +24,8 @@ def sum_series(n, base1 = 0, base2 = 1):
     :param base2 = the 2nd generic base term for a summation
     :return: the nth term of the generic summation sequence given two base values (fibonacci as default)
     """
+    if not (type(n) == int or type(n) == float) or math.trunc(n) != n:
+        return None
     calc_values = {0:base1, 1:base2}
     return sum_series_recurse(n, calc_values)
 
